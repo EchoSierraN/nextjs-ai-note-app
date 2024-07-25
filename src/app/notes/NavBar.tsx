@@ -9,8 +9,11 @@ import { Plus } from "lucide-react";
 import { useState } from "react";
 import AddEditNoteDialog from "@/components/AddEditNoteDialog";
 import ThemeToggleButton from "@/components/ThemeToggleButton";
+import { dark } from "@clerk/themes";
+import { useTheme } from "next-themes";
 
 export default function NavBar() {
+  const { theme } = useTheme();
   const [showAddNoteDialog, setShowAddNoteDialog] = useState(false);
 
   return (
@@ -25,6 +28,7 @@ export default function NavBar() {
             <UserButton
               afterSignOutUrl="/"
               appearance={{
+                baseTheme: theme === "dark" ? dark : undefined,
                 elements: {
                   userButtonAvatarBox: {
                     width: "2.5rem",
