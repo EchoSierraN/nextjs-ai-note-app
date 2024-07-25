@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import AddEditNoteDialog from "@/components/AddEditNoteDialog";
+import ThemeToggleButton from "@/components/ThemeToggleButton";
 
 export default function NavBar() {
   const [showAddNoteDialog, setShowAddNoteDialog] = useState(false);
@@ -32,6 +33,7 @@ export default function NavBar() {
                 },
               }}
             />
+            <ThemeToggleButton />
             <Button onClick={() => setShowAddNoteDialog(true)}>
               <Plus size={20} className="mr-2" />
               Add Note
